@@ -14,6 +14,9 @@
 		758567552B09760D00C4332A /* ScooterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758567542B09760D00C4332A /* ScooterTests.swift */; };
 		7585675F2B09760D00C4332A /* ScooterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7585675E2B09760D00C4332A /* ScooterUITests.swift */; };
 		758567612B09760D00C4332A /* ScooterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758567602B09760D00C4332A /* ScooterUITestsLaunchTests.swift */; };
+		75E844B62B09788E00F87120 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 75E844B32B09788E00F87120 /* README.md */; };
+		75E844B72B09788E00F87120 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 75E844B42B09788E00F87120 /* .gitignore */; };
+		75E844B82B09788E00F87120 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 75E844B52B09788E00F87120 /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		7585675A2B09760D00C4332A /* ScooterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScooterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7585675E2B09760D00C4332A /* ScooterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScooterUITests.swift; sourceTree = "<group>"; };
 		758567602B09760D00C4332A /* ScooterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScooterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		75E844B32B09788E00F87120 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		75E844B42B09788E00F87120 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		75E844B52B09788E00F87120 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,9 @@
 		758567372B09760C00C4332A = {
 			isa = PBXGroup;
 			children = (
+				75E844B42B09788E00F87120 /* .gitignore */,
+				75E844B52B09788E00F87120 /* LICENSE */,
+				75E844B32B09788E00F87120 /* README.md */,
 				758567422B09760C00C4332A /* Scooter */,
 				758567532B09760D00C4332A /* ScooterTests */,
 				7585675D2B09760D00C4332A /* ScooterUITests */,
@@ -231,8 +240,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E844B72B09788E00F87120 /* .gitignore in Resources */,
+				75E844B62B09788E00F87120 /* README.md in Resources */,
 				7585674B2B09760D00C4332A /* Preview Assets.xcassets in Resources */,
 				758567482B09760D00C4332A /* Assets.xcassets in Resources */,
+				75E844B82B09788E00F87120 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
