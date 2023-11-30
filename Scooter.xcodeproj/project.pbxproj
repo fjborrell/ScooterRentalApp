@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75091CED2B18214700AD0BBE /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75091CEC2B18214700AD0BBE /* View+Extension.swift */; };
+		75091CF12B18227A00AD0BBE /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75091CF02B18227A00AD0BBE /* Tab.swift */; };
+		75091CF32B18228200AD0BBE /* WindowSharedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75091CF22B18228200AD0BBE /* WindowSharedModel.swift */; };
+		75091CF52B1828C500AD0BBE /* ScooterCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75091CF42B1828C500AD0BBE /* ScooterCard.swift */; };
+		75091CF72B182CA900AD0BBE /* DataBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75091CF62B182CA900AD0BBE /* DataBar.swift */; };
 		758567442B09760C00C4332A /* ScooterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758567432B09760C00C4332A /* ScooterApp.swift */; };
 		758567462B09760C00C4332A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758567452B09760C00C4332A /* ContentView.swift */; };
 		758567482B09760D00C4332A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 758567472B09760D00C4332A /* Assets.xcassets */; };
@@ -37,6 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		75091CEC2B18214700AD0BBE /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		75091CF02B18227A00AD0BBE /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		75091CF22B18228200AD0BBE /* WindowSharedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSharedModel.swift; sourceTree = "<group>"; };
+		75091CF42B1828C500AD0BBE /* ScooterCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScooterCard.swift; sourceTree = "<group>"; };
+		75091CF62B182CA900AD0BBE /* DataBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBar.swift; sourceTree = "<group>"; };
 		758567402B09760C00C4332A /* Scooter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scooter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		758567432B09760C00C4332A /* ScooterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScooterApp.swift; sourceTree = "<group>"; };
 		758567452B09760C00C4332A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +87,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75091CEE2B1821DF00AD0BBE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				75091CEC2B18214700AD0BBE /* View+Extension.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		75091CEF2B1821E500AD0BBE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				75091CF02B18227A00AD0BBE /* Tab.swift */,
+				75091CF22B18228200AD0BBE /* WindowSharedModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		758567372B09760C00C4332A = {
 			isa = PBXGroup;
 			children = (
@@ -103,10 +130,14 @@
 		758567422B09760C00C4332A /* Scooter */ = {
 			isa = PBXGroup;
 			children = (
+				75091CEF2B1821E500AD0BBE /* Model */,
+				75091CEE2B1821DF00AD0BBE /* Helper */,
 				758567432B09760C00C4332A /* ScooterApp.swift */,
 				758567452B09760C00C4332A /* ContentView.swift */,
 				758567472B09760D00C4332A /* Assets.xcassets */,
 				758567492B09760D00C4332A /* Preview Content */,
+				75091CF42B1828C500AD0BBE /* ScooterCard.swift */,
+				75091CF62B182CA900AD0BBE /* DataBar.swift */,
 			);
 			path = Scooter;
 			sourceTree = "<group>";
@@ -270,7 +301,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				758567462B09760C00C4332A /* ContentView.swift in Sources */,
+				75091CF52B1828C500AD0BBE /* ScooterCard.swift in Sources */,
 				758567442B09760C00C4332A /* ScooterApp.swift in Sources */,
+				75091CF72B182CA900AD0BBE /* DataBar.swift in Sources */,
+				75091CF32B18228200AD0BBE /* WindowSharedModel.swift in Sources */,
+				75091CED2B18214700AD0BBE /* View+Extension.swift in Sources */,
+				75091CF12B18227A00AD0BBE /* Tab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

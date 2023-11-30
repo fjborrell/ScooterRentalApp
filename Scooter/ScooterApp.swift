@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct ScooterApp: App {
+    var windowSharedModel = WindowSharedModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(windowSharedModel)
         }
     }
 }
