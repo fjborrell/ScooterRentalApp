@@ -53,6 +53,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabWindow = PassThroughWindow(windowScene: scene)
         tabWindow.rootViewController = tabBarController
         tabWindow.isHidden = false
+        tabWindow.windowLevel = .alert
+        
         
         /// Strong Tab Window Reference
         self.tabWindow = tabWindow

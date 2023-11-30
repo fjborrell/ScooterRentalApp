@@ -37,14 +37,25 @@ fileprivate struct BottomSheetModifier<SheetContent: View>: ViewModifier {
     func body(content: Content) -> some View {
         content
             .sheet(isPresented: $showSheet) {
-                sheetView
-                    .presentationDetents([.height(initialHeight), .medium, .fraction(0.99)])
-                    .presentationCornerRadius(sheetCornerRadius)
-                    .presentationBackgroundInteraction(.enabled(upThrough: .medium))
-                    .presentationContentInteraction(.scrolls)
-                    .presentationBackground(.ultraThinMaterial)
-                    .presentationDragIndicator(.visible)
-                    .interactiveDismissDisabled()
+                VStack(spacing: 0) {
+                    sheetView
+                        .background(.ultraThinMaterial)
+                        .zIndex(0)
+                    
+                    Divider()
+                        .hidden()
+                    
+                    Rectangle()
+                        .fill(.clear)
+                        .frame(height: 55)
+                }
+                .presentationDetents([.height(initialHeight), .medium, .fraction(0.99)])
+                .presentationCornerRadius(sheetCornerRadius)
+                .presentationBackgroundInteraction(.enabled(upThrough: .medium))
+                .presentationContentInteraction(.scrolls)
+                .presentationBackground(.clear)
+                .presentationDragIndicator(.visible)
+                .interactiveDismissDisabled()
             }
     }
 }

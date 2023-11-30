@@ -8,27 +8,69 @@
 import SwiftUI
 import MapKit
 
-// Apple Park Location Coordinates
-extension MKCoordinateRegion {
-    static var applePark: MKCoordinateRegion {
-        return .init(
-            center: .init(latitude: 18.4739, longitude: -69.9100),
-            latitudinalMeters: 1000,
-            longitudinalMeters: 1000
-        )
-    }
-}
-
 
 struct ContentView: View {
     @Environment(WindowSharedModel.self) private var windowSharedModel
     @Environment(SceneDelegate.self) private var sceneDelegate
+    
+    let rentals = PinLocations().rentalLocations
+    let scooters = PinLocations().scooterLocations
+    
+    var filteredRentals: [MapLocation] {
+        guard !searchText.isEmpty else { return rentals }
+        return rentals.filter { rental in
+            rental.name.lowercased().contains(searchText.lowercased())
+        }
+    }
+    
+    var filteredScooters: [MapLocation] {
+        guard !searchText.isEmpty else { return scooters }
+        return scooters.filter { scooter in
+            scooter.name.lowercased().contains(searchText.lowercased())
+        }
+    }
+    
+    var locationManager = CLLocationManager()
+    @State var searchText = String()
+    @State var selectedTag: UUID?
+    
     var body: some View {
         @Bindable var bindableObject = windowSharedModel
+        
         TabView(selection: $bindableObject.activeTab) {
             NavigationStack {
-                Map(initialPosition: .region(.applePark))
+
+                Map(initialPosition: .region(.downtownDomRep), selection: $selectedTag) {
+                    /// User Dot
+                    UserAnnotation()
+                    
+                    /// Rental Locations
+                    ForEach(filteredRentals, id: \.self) { rental in
+                        Marker(rental.name, coordinate: rental.coordinate)
+                            .tag(rental.id)
+                    }
+                    
+                    /// Scooter Locations
+                    ForEach(filteredScooters, id: \.self) { scooter in
+                        Marker(scooter.name, systemImage: "scooter", coordinate: scooter.coordinate)
+                            .tint(.blue)
+                            .tag(scooter.id)
+                    }
+                }
+                .onChange(of: selectedTag) {
+                    print(selectedTag ?? "Nothing")
+                }
+                .mapStyle(.standard(elevation: .realistic, emphasis: .muted))
+                .mapControls {
+                    MapUserLocationButton()
+                    MapCompass()
+                        .mapControlVisibility(.visible)
+                    MapScaleView()
+                        .mapControlVisibility(.visible)
+                }
+                
             }
+            .searchable(text: $searchText)
             .tag(Tab.map)
             .hideNativeTabBar()
             
@@ -63,42 +105,30 @@ struct ContentView: View {
         .onAppear {
             guard sceneDelegate.tabWindow == nil else { return }
             sceneDelegate.addTabBar(windowSharedModel: windowSharedModel)
-        }
-    }
-}
-
-
-// CUSTOM TAB
-struct CustomTabBar: View {
-    @Environment(WindowSharedModel.self) private var windowSharedModel
-
-    var body: some View {
-        VStack(spacing: 0) {
-            Divider()
             
-            HStack(spacing: 0) {
-                ForEach(Tab.allCases, id: \.rawValue) { tab in
-                    Button {
-                        windowSharedModel.activeTab = tab
-                    } label: {
-                        VStack {
-                            Image(systemName: tab.rawValue)
-                                .font(.title2)
-                            Text(tab.title)
-                                .font(.caption)
-                        }
-                        .foregroundStyle(windowSharedModel.activeTab == tab ? Color.accentColor : .gray)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .contentShape(Rectangle())
-                    }
-                }
-            }
-            .frame(height: 55)
+            locationManagerDidChangeAuthorization(locationManager)
         }
-        .background(.regularMaterial)
     }
 }
 
+func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+    switch manager.authorizationStatus {
+    case .authorizedWhenInUse:  // Location services are available.
+        print("Located :)")
+        break
+        
+    case .restricted, .denied:  // Location services currently unavailable.
+        print("Not Located :(")
+        break
+        
+    case .notDetermined:        // Authorization not determined yet.
+        manager.requestWhenInUseAuthorization()
+        break
+        
+    default:
+        break
+    }
+}
 
 @ViewBuilder
 func cardBuilder(_ colors: [Color]) -> some View {
