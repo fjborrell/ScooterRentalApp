@@ -22,41 +22,28 @@ extension MKCoordinateRegion {
 
 struct ContentView: View {
     @Environment(WindowSharedModel.self) private var windowSharedModel
+    @Environment(SceneDelegate.self) private var sceneDelegate
     var body: some View {
         @Bindable var bindableObject = windowSharedModel
         TabView(selection: $bindableObject.activeTab) {
             NavigationStack {
-                Text("People")
+                Text("Map")
             }
-            .tag(Tab.people)
+            .tag(Tab.map)
             .hideNativeTabBar()
             
             NavigationStack {
-                Text("Devices")
+                Text("Profile")
             }
-            .tag(Tab.items)
-            .hideNativeTabBar()
-            
-            NavigationStack {
-                Text("Items")
-            }
-            .tag(Tab.items)
-            .hideNativeTabBar()
-            
-            NavigationStack {
-                Text("Me")
-            }
-            .tag(Tab.me)
+            .tag(Tab.profile)
             .hideNativeTabBar()
         }
         .tabSheet(initialHeight: 100, sheetCornerRadius: 15) {
             NavigationStack {
                 ScrollView {
-                    VStack(spacing: 15) {
-                        
+                    if windowSharedModel.activeTab == .map {
+                        cardBuilder([Color.mint, Color.blue, Color.cyan, Color.green])
                     }
-                    .padding(.horizontal, 15)
-                    .padding(.vertical, 10)
                 }
                 .scrollIndicators(.hidden)
                 .toolbar {
@@ -67,7 +54,55 @@ struct ContentView: View {
                 }
             }
         }
+        .onAppear {
+            guard sceneDelegate.tabWindow == nil else { return }
+            sceneDelegate.addTabBar(windowSharedModel: windowSharedModel)
+        }
     }
+}
+
+
+// CUSTOM TAB
+struct CustomTabBar: View {
+    @Environment(WindowSharedModel.self) private var windowSharedModel
+
+    var body: some View {
+        VStack(spacing: 0) {
+            Divider()
+            
+            HStack(spacing: 0) {
+                ForEach(Tab.allCases, id: \.rawValue) { tab in
+                    Button {
+                        windowSharedModel.activeTab = tab
+                    } label: {
+                        VStack {
+                            Image(systemName: tab.rawValue)
+                                .font(.title2)
+                            Text(tab.title)
+                                .font(.caption)
+                        }
+                        .foregroundStyle(windowSharedModel.activeTab == tab ? Color.accentColor : .gray)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .contentShape(Rectangle())
+                    }
+                }
+            }
+            .frame(height: 55)
+        }
+        .background(.regularMaterial)
+    }
+}
+
+
+@ViewBuilder
+func cardBuilder(_ colors: [Color]) -> some View {
+    VStack(spacing: 15) {
+        ForEach(colors.indices, id: \.self) { index in
+            ScooterCard(colors[index])
+        }
+    }
+    .padding(.horizontal, 15)
+    .padding(.vertical, 10)
 }
 
 #Preview {

@@ -9,5 +9,5 @@ import SwiftUI
 
 @Observable
 class WindowSharedModel {
-    var activeTab: Tab = .devices
+    var activeTab: Tab = .map
 }

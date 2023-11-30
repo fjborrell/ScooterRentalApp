@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct ScooterApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var delegate
     var windowSharedModel = WindowSharedModel()
     var body: some Scene {
         WindowGroup {
@@ -17,3 +18,44 @@ struct ScooterApp: App {
         }
     }
 }
+
+/// App Delegate
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        let config = UISceneConfiguration(name: nil, sessionRole: connectingSceneSession.role)
+        config.delegateClass = SceneDelegate.self
+        return config
+    }
+}
+
+/// Scene Delegate
+@Observable
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    weak var windowScene: UIWindowScene?
+    var tabWindow: UIWindow?
+
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        windowScene = scene as? UIWindowScene
+    }
+    
+    func addTabBar(windowSharedModel: WindowSharedModel) {
+        guard let scene = windowScene else {
+            return
+        }
+        
+        let tabBarController = UIHostingController(rootView: 
+            CustomTabBar()
+                .environment(windowSharedModel)
+                .frame(maxHeight: .infinity, alignment: .bottom)
+        )
+        tabBarController.view.backgroundColor = .clear
+        /// Window
+        let tabWindow = UIWindow(windowScene: scene)
+        tabWindow.rootViewController = tabBarController
+        tabWindow.isHidden = false
+        
+        /// Strong Tab Window Reference
+        self.tabWindow = tabWindow
+    }
+}
+
