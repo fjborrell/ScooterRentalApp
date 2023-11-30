@@ -10,23 +10,27 @@ import SwiftUI
 struct ScooterCard: View {
     public var color: Color = Color.cyan
     private var cornerPadding = 20.0
+    private var width = 315.0
+    private var height = 185.0
+    private var radius = 20.0
     
     public init(_ color: Color) {
         self.color = color
     }
     
     var body: some View {
-        RoundedRectangle(cornerRadius: 20)
-            .frame(width: 275, height: 180)
+        RoundedRectangle(cornerRadius: radius)
+            .frame(width: width, height: height)
+            .shadow(radius: 5)
             .foregroundStyle(color)
             .overlay {
                 Image("scooters")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .blur(radius: 1.8)
-                    .opacity(0.3)
-                    .frame(width: 275, height: 180)
-                    .clipShape(RoundedRectangle(cornerRadius: 20.0))
+                    .blur(radius: 2.2)
+                    .opacity(0.22)
+                    .frame(width: width, height: height)
+                    .clipShape(RoundedRectangle(cornerRadius: radius))
             }
             .overlay(alignment: .topLeading) {
                 Text("Scooter ABC")
@@ -44,6 +48,7 @@ struct ScooterCard: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 45)
                     .padding(cornerPadding - 4)
+                    .shadow(radius: 2)
             }
             .overlay(alignment: .bottomLeading) {
                 VStack {

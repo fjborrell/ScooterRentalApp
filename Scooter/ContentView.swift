@@ -12,7 +12,7 @@ import MapKit
 extension MKCoordinateRegion {
     static var applePark: MKCoordinateRegion {
         return .init(
-            center: .init(latitude: 37.3346, longitude: -122.0090),
+            center: .init(latitude: 18.4739, longitude: -69.9100),
             latitudinalMeters: 1000,
             longitudinalMeters: 1000
         )
@@ -27,7 +27,7 @@ struct ContentView: View {
         @Bindable var bindableObject = windowSharedModel
         TabView(selection: $bindableObject.activeTab) {
             NavigationStack {
-                Text("Map")
+                Map(initialPosition: .region(.applePark))
             }
             .tag(Tab.map)
             .hideNativeTabBar()
@@ -38,18 +38,24 @@ struct ContentView: View {
             .tag(Tab.profile)
             .hideNativeTabBar()
         }
-        .tabSheet(initialHeight: 100, sheetCornerRadius: 15) {
+        .tabSheet(initialHeight: 110, sheetCornerRadius: 15) {
             NavigationStack {
                 ScrollView {
                     if windowSharedModel.activeTab == .map {
                         cardBuilder([Color.mint, Color.blue, Color.cyan, Color.green])
                     }
                 }
+                .scrollContentBackground(.hidden)
                 .scrollIndicators(.hidden)
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
-                        Text(windowSharedModel.activeTab.title)
-                            .font(.title3.bold())
+                        if windowSharedModel.activeTab == .map {
+                            Text("My Scooters")
+                                .font(.title3.bold())
+                        } else {
+                            Text(windowSharedModel.activeTab.title)
+                                .font(.title3.bold())
+                        }
                     }
                 }
             }

@@ -50,7 +50,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         )
         tabBarController.view.backgroundColor = .clear
         /// Window
-        let tabWindow = UIWindow(windowScene: scene)
+        let tabWindow = PassThroughWindow(windowScene: scene)
         tabWindow.rootViewController = tabBarController
         tabWindow.isHidden = false
         
@@ -58,4 +58,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.tabWindow = tabWindow
     }
 }
+
+/// PassThrough UIWindow (enable interaction behind tab bar)
+class PassThroughWindow: UIWindow {
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        guard let view = super.hitTest(point, with: event) else { return nil }
+        return rootViewController?.view == view ? nil : view
+    }
+}
+
 

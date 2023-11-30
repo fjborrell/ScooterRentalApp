@@ -18,7 +18,7 @@ struct IDBar: View {
             // Bar
             RoundedRectangle(cornerRadius: 50)
                 .foregroundStyle(.gray)
-                .frame(width: 140, height: 28)
+                .frame(width: 170, height: 28)
                 .overlay {
                     HStack() {
                         Image(systemName: "number.circle")

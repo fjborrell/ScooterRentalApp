@@ -18,7 +18,7 @@ struct BatteryBar: View {
             // Bar
             RoundedRectangle(cornerRadius: 50)
                 .foregroundStyle(.green)
-                .frame(width: 140, height: 28)
+                .frame(width: 170, height: 28)
                 .overlay {
                     HStack() {
                         Image(systemName: "battery.100percent.bolt")
