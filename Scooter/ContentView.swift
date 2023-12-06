@@ -10,19 +10,22 @@ import MapKit
 
 
 struct ContentView: View {
+    // Window-Related Variables
     @Environment(WindowSharedModel.self) private var windowSharedModel
     @Environment(SceneDelegate.self) private var sceneDelegate
     
+    // Map Related Variables
+    @State var searchText = String()
+    @State var selectedTag: UUID?
     let rentals = PinLocations().rentalLocations
     let scooters = PinLocations().scooterLocations
-    
+    var locationManager = CLLocationManager()
     var filteredRentals: [MapLocation] {
         guard !searchText.isEmpty else { return rentals }
         return rentals.filter { rental in
             rental.name.lowercased().contains(searchText.lowercased())
         }
     }
-    
     var filteredScooters: [MapLocation] {
         guard !searchText.isEmpty else { return scooters }
         return scooters.filter { scooter in
@@ -30,16 +33,47 @@ struct ContentView: View {
         }
     }
     
-    var locationManager = CLLocationManager()
-    @State var searchText = String()
-    @State var selectedTag: UUID?
+    func getRentalName(rentalId: UUID?) -> String? {
+        guard rentalId == rentalId else {
+            return nil
+        }
+        
+        for rental in filteredRentals {
+            if rental.id == rentalId {
+                return rental.name
+            }
+        }
+        return nil
+    }
+    
+    @ViewBuilder
+    func mapSheetView() -> some View {
+        let rentalName: String? = getRentalName(rentalId: selectedTag)
+        
+        if selectedTag != nil {
+            VStack {
+                Text("Rent a ride from:")
+                    .font(.custom("Pally-Regular", size: 20))
+                    .padding(.top, 10)
+                Text("\(rentalName ?? "Unknown")")
+                    .font(.custom("Pally-Medium", size: 20))
+                    .padding(.bottom, 25)
+                
+                ScooterSelectorView()
+            }
+            
+        } else {
+            cardBuilder([Color.mint, Color.blue, Color.cyan, Color.green])
+        }
+    }
+    
     
     var body: some View {
         @Bindable var bindableObject = windowSharedModel
         
         TabView(selection: $bindableObject.activeTab) {
+            // MAP VIEW
             NavigationStack {
-
                 Map(initialPosition: .region(.downtownDomRep), selection: $selectedTag) {
                     /// User Dot
                     UserAnnotation()
@@ -68,14 +102,30 @@ struct ContentView: View {
                     MapScaleView()
                         .mapControlVisibility(.visible)
                 }
+                .searchable(text: $searchText)
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        HStack(spacing: 10.0) {
+                            Image("scooter-logo-sun")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 35, height: 35)
+                            Text("RAVE")
+                                .font(.custom("Pally-Medium", size: 20))
+                        }
+                        
+                    }
+                }
                 
             }
-            .searchable(text: $searchText)
             .tag(Tab.map)
             .hideNativeTabBar()
             
+            // PROFILE VIEW
             NavigationStack {
-                Text("Profile")
+                VStack(spacing: 70.0) {
+                    CustomQRCode()
+                }
             }
             .tag(Tab.profile)
             .hideNativeTabBar()
@@ -84,7 +134,7 @@ struct ContentView: View {
             NavigationStack {
                 ScrollView {
                     if windowSharedModel.activeTab == .map {
-                        cardBuilder([Color.mint, Color.blue, Color.cyan, Color.green])
+                        mapSheetView()
                     }
                 }
                 .scrollContentBackground(.hidden)

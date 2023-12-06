@@ -23,9 +23,18 @@
 		758567552B09760D00C4332A /* ScooterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758567542B09760D00C4332A /* ScooterTests.swift */; };
 		7585675F2B09760D00C4332A /* ScooterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7585675E2B09760D00C4332A /* ScooterUITests.swift */; };
 		758567612B09760D00C4332A /* ScooterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758567602B09760D00C4332A /* ScooterUITestsLaunchTests.swift */; };
+		75B40D122B1FB7AB00E94FC7 /* ScooterSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B40D112B1FB7AB00E94FC7 /* ScooterSelectorView.swift */; };
 		75E844B62B09788E00F87120 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 75E844B32B09788E00F87120 /* README.md */; };
 		75E844B72B09788E00F87120 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 75E844B42B09788E00F87120 /* .gitignore */; };
 		75E844B82B09788E00F87120 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 75E844B52B09788E00F87120 /* LICENSE */; };
+		75EC34122B1925C500ACF07F /* CustomQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EC34112B1925C500ACF07F /* CustomQRCode.swift */; };
+		75EC341C2B192C1900ACF07F /* Pally-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 75EC34182B192B6700ACF07F /* Pally-Bold.otf */; };
+		75EC341D2B192C1900ACF07F /* Pally-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 75EC34192B192B6700ACF07F /* Pally-Medium.otf */; };
+		75EC341E2B192C1900ACF07F /* Anonymous Pro BI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75EC34132B19299600ACF07F /* Anonymous Pro BI.ttf */; };
+		75EC341F2B192C1900ACF07F /* Anonymous Pro I.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75EC34152B19299600ACF07F /* Anonymous Pro I.ttf */; };
+		75EC34202B192C1900ACF07F /* Pally-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 75EC341B2B192B6700ACF07F /* Pally-Regular.otf */; };
+		75EC34212B192C1900ACF07F /* Anonymous Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75EC34162B19299600ACF07F /* Anonymous Pro.ttf */; };
+		75EC34222B192C1900ACF07F /* Anonymous Pro B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75EC34142B19299600ACF07F /* Anonymous Pro B.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,9 +75,18 @@
 		7585675A2B09760D00C4332A /* ScooterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScooterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7585675E2B09760D00C4332A /* ScooterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScooterUITests.swift; sourceTree = "<group>"; };
 		758567602B09760D00C4332A /* ScooterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScooterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		75B40D112B1FB7AB00E94FC7 /* ScooterSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScooterSelectorView.swift; sourceTree = "<group>"; };
 		75E844B32B09788E00F87120 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		75E844B42B09788E00F87120 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		75E844B52B09788E00F87120 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		75EC34112B1925C500ACF07F /* CustomQRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomQRCode.swift; sourceTree = "<group>"; };
+		75EC34132B19299600ACF07F /* Anonymous Pro BI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Anonymous Pro BI.ttf"; sourceTree = "<group>"; };
+		75EC34142B19299600ACF07F /* Anonymous Pro B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Anonymous Pro B.ttf"; sourceTree = "<group>"; };
+		75EC34152B19299600ACF07F /* Anonymous Pro I.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Anonymous Pro I.ttf"; sourceTree = "<group>"; };
+		75EC34162B19299600ACF07F /* Anonymous Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Anonymous Pro.ttf"; sourceTree = "<group>"; };
+		75EC34182B192B6700ACF07F /* Pally-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pally-Bold.otf"; sourceTree = "<group>"; };
+		75EC34192B192B6700ACF07F /* Pally-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pally-Medium.otf"; sourceTree = "<group>"; };
+		75EC341B2B192B6700ACF07F /* Pally-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pally-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +117,7 @@
 		75091CEE2B1821DF00AD0BBE /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				75EC34172B1929A200ACF07F /* Fonts */,
 				75091CEC2B18214700AD0BBE /* View+Extension.swift */,
 				75091CFF2B1848ED00AD0BBE /* MapHelper.swift */,
 			);
@@ -122,6 +141,8 @@
 				75091CF62B182CA900AD0BBE /* BatteryBar.swift */,
 				75091CF82B182E9B00AD0BBE /* IDBar.swift */,
 				75091CFD2B1847F400AD0BBE /* CustomTabBar.swift */,
+				75EC34112B1925C500ACF07F /* CustomQRCode.swift */,
+				75B40D112B1FB7AB00E94FC7 /* ScooterSelectorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +208,20 @@
 				758567602B09760D00C4332A /* ScooterUITestsLaunchTests.swift */,
 			);
 			path = ScooterUITests;
+			sourceTree = "<group>";
+		};
+		75EC34172B1929A200ACF07F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				75EC34182B192B6700ACF07F /* Pally-Bold.otf */,
+				75EC34192B192B6700ACF07F /* Pally-Medium.otf */,
+				75EC341B2B192B6700ACF07F /* Pally-Regular.otf */,
+				75EC34142B19299600ACF07F /* Anonymous Pro B.ttf */,
+				75EC34132B19299600ACF07F /* Anonymous Pro BI.ttf */,
+				75EC34152B19299600ACF07F /* Anonymous Pro I.ttf */,
+				75EC34162B19299600ACF07F /* Anonymous Pro.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,9 +329,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				75E844B72B09788E00F87120 /* .gitignore in Resources */,
+				75EC341D2B192C1900ACF07F /* Pally-Medium.otf in Resources */,
+				75EC341C2B192C1900ACF07F /* Pally-Bold.otf in Resources */,
+				75EC34212B192C1900ACF07F /* Anonymous Pro.ttf in Resources */,
 				75E844B62B09788E00F87120 /* README.md in Resources */,
 				7585674B2B09760D00C4332A /* Preview Assets.xcassets in Resources */,
+				75EC34202B192C1900ACF07F /* Pally-Regular.otf in Resources */,
+				75EC34222B192C1900ACF07F /* Anonymous Pro B.ttf in Resources */,
+				75EC341E2B192C1900ACF07F /* Anonymous Pro BI.ttf in Resources */,
 				758567482B09760D00C4332A /* Assets.xcassets in Resources */,
+				75EC341F2B192C1900ACF07F /* Anonymous Pro I.ttf in Resources */,
 				75E844B82B09788E00F87120 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,11 +370,13 @@
 				758567442B09760C00C4332A /* ScooterApp.swift in Sources */,
 				75091D002B1848ED00AD0BBE /* MapHelper.swift in Sources */,
 				75091CFB2B18477F00AD0BBE /* MapLocation.swift in Sources */,
+				75EC34122B1925C500ACF07F /* CustomQRCode.swift in Sources */,
 				75091CF72B182CA900AD0BBE /* BatteryBar.swift in Sources */,
 				75091CFE2B1847F400AD0BBE /* CustomTabBar.swift in Sources */,
 				75091CF32B18228200AD0BBE /* WindowSharedModel.swift in Sources */,
 				75091CED2B18214700AD0BBE /* View+Extension.swift in Sources */,
 				75091CF12B18227A00AD0BBE /* Tab.swift in Sources */,
+				75B40D122B1FB7AB00E94FC7 /* ScooterSelectorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

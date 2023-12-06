@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Anonymous Pro.ttf</string>
+		<string>Anonymous Pro B.ttf</string>
+		<string>Anonymous Pro BI.ttf</string>
+		<string>Anonymous Pro I.ttf</string>
+		<string>Pally-Bold.otfPally-Regular.otfPally-Medium.otfPally-Medium.ttf</string>
+		<string>Pally-Regular.otf</string>
+		<string>Pally-Medium.otf</string>
+	</array>
+</dict>
 </plist>
