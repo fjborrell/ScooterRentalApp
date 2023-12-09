@@ -16,6 +16,8 @@
 		75091CFB2B18477F00AD0BBE /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75091CFA2B18477F00AD0BBE /* MapLocation.swift */; };
 		75091CFE2B1847F400AD0BBE /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75091CFD2B1847F400AD0BBE /* CustomTabBar.swift */; };
 		75091D002B1848ED00AD0BBE /* MapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75091CFF2B1848ED00AD0BBE /* MapHelper.swift */; };
+		7541D1192B25199C000028EF /* ScooterDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7541D1182B25199C000028EF /* ScooterDetailsView.swift */; };
+		7541D11B2B252672000028EF /* RentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7541D11A2B252672000028EF /* RentView.swift */; };
 		758567442B09760C00C4332A /* ScooterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758567432B09760C00C4332A /* ScooterApp.swift */; };
 		758567462B09760C00C4332A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758567452B09760C00C4332A /* ContentView.swift */; };
 		758567482B09760D00C4332A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 758567472B09760D00C4332A /* Assets.xcassets */; };
@@ -65,6 +67,8 @@
 		75091CFD2B1847F400AD0BBE /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		75091CFF2B1848ED00AD0BBE /* MapHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHelper.swift; sourceTree = "<group>"; };
 		75091D012B18531200AD0BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7541D1182B25199C000028EF /* ScooterDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScooterDetailsView.swift; sourceTree = "<group>"; };
+		7541D11A2B252672000028EF /* RentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentView.swift; sourceTree = "<group>"; };
 		758567402B09760C00C4332A /* Scooter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scooter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		758567432B09760C00C4332A /* ScooterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScooterApp.swift; sourceTree = "<group>"; };
 		758567452B09760C00C4332A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 				75091CFD2B1847F400AD0BBE /* CustomTabBar.swift */,
 				75EC34112B1925C500ACF07F /* CustomQRCode.swift */,
 				75B40D112B1FB7AB00E94FC7 /* ScooterSelectorView.swift */,
+				7541D1182B25199C000028EF /* ScooterDetailsView.swift */,
+				7541D11A2B252672000028EF /* RentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -368,9 +374,11 @@
 				758567462B09760C00C4332A /* ContentView.swift in Sources */,
 				75091CF52B1828C500AD0BBE /* ScooterCard.swift in Sources */,
 				758567442B09760C00C4332A /* ScooterApp.swift in Sources */,
+				7541D11B2B252672000028EF /* RentView.swift in Sources */,
 				75091D002B1848ED00AD0BBE /* MapHelper.swift in Sources */,
 				75091CFB2B18477F00AD0BBE /* MapLocation.swift in Sources */,
 				75EC34122B1925C500ACF07F /* CustomQRCode.swift in Sources */,
+				7541D1192B25199C000028EF /* ScooterDetailsView.swift in Sources */,
 				75091CF72B182CA900AD0BBE /* BatteryBar.swift in Sources */,
 				75091CFE2B1847F400AD0BBE /* CustomTabBar.swift in Sources */,
 				75091CF32B18228200AD0BBE /* WindowSharedModel.swift in Sources */,

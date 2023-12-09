@@ -44,16 +44,14 @@ struct ScooterSelectorView: View {
     
     var body: some View {
         HStack(alignment: .bottom, spacing: 25.0) {
-            buttonCreator(icon: moped)
-            buttonCreator(icon: scooter)
+            buttonCreator(icon: moped, isMoped: true)
+            buttonCreator(icon: scooter, isMoped: false)
         }
     }
     
     @ViewBuilder
-    func buttonCreator(icon: some View) -> some View {
-        Button(action: {
-            print("Button Clicked!")
-        }) {
+    func buttonCreator(icon: some View, isMoped: Bool) -> some View {
+        NavigationLink(destination: RentView(isMoped: isMoped)) {
             ZStack {
                 RoundedRectangle(cornerRadius: 25.0)
                     .foregroundStyle(.linearGradient(colors: [.white, .cyan], startPoint: .topLeading, endPoint: .bottom))
@@ -62,7 +60,6 @@ struct ScooterSelectorView: View {
                 icon
             }
         }
-        
     }
 }
 

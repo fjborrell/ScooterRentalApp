@@ -51,8 +51,8 @@ struct ScooterCard: View {
                     .shadow(radius: 2)
             }
             .overlay(alignment: .bottomLeading) {
-                VStack {
-                    BatteryBar()
+                VStack(alignment: .leading) {
+                    BatteryBar(barLength: 50)
                     IDBar()
                 }
                 .padding(cornerPadding)

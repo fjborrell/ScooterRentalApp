@@ -48,22 +48,27 @@ struct ContentView: View {
     
     @ViewBuilder
     func mapSheetView() -> some View {
-        let rentalName: String? = getRentalName(rentalId: selectedTag)
+        let rentalName: String = getRentalName(rentalId: selectedTag) ?? "Unknown"
         
         if selectedTag != nil {
-            VStack {
-                Text("Rent a ride from:")
-                    .font(.custom("Pally-Regular", size: 20))
-                    .padding(.top, 10)
-                Text("\(rentalName ?? "Unknown")")
-                    .font(.custom("Pally-Medium", size: 20))
-                    .padding(.bottom, 25)
-                
-                ScooterSelectorView()
+            
+            if rentalName == "Unknown" {
+                ScooterDetailsView(isMoped: false)
+            } else {
+                VStack {
+                    Text("Rent a ride from:")
+                        .font(.custom("Pally-Regular", size: 20))
+                        .padding(.top, 10)
+                    Text("\(rentalName)")
+                        .font(.custom("Pally-Medium", size: 20))
+                        .padding(.bottom, 25)
+                    
+                    ScooterSelectorView()
+                }
             }
             
         } else {
-            cardBuilder([Color.mint, Color.blue, Color.cyan, Color.green])
+            cardBuilder([Color.indigo, Color.blue, Color.purple, Color.green])
         }
     }
     
@@ -105,15 +110,11 @@ struct ContentView: View {
                 .searchable(text: $searchText)
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
-                        HStack(spacing: 10.0) {
-                            Image("scooter-logo-sun")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 35, height: 35)
-                            Text("RAVE")
-                                .font(.custom("Pally-Medium", size: 20))
-                        }
-                        
+                        Image("scooter-logo-sun")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 75, height: 75, alignment: .center)
+                            //.padding(.horizontal, UIScreen.main.bounds.width / 2)
                     }
                 }
                 

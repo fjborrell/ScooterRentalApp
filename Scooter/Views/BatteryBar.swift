@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct BatteryBar: View {
-    private var fontSize = 12.0
+    var fontSize = 12.0
+    var barLength: CGFloat
+    //var isInvert: Bool
+    
     var body: some View {
         VStack(alignment: .leading) {
             // Title
@@ -18,7 +21,7 @@ struct BatteryBar: View {
             // Bar
             RoundedRectangle(cornerRadius: 50)
                 .foregroundStyle(.green)
-                .frame(width: 170, height: 28)
+                .frame(width: 250, height: 28)
                 .overlay {
                     HStack() {
                         Image(systemName: "battery.100percent.bolt")
@@ -35,5 +38,5 @@ struct BatteryBar: View {
 }
 
 #Preview {
-    BatteryBar()
+    BatteryBar(barLength: 170.0)
 }
